@@ -7,7 +7,7 @@ body {
 	/*Upload a new one to the img folder.*/
 	/*Make sure you name it 'background.jpg'*/
 	background: linear-gradient(rgba(20, 26, 35,0.55),rgba(20, 26, 35, 0.55)),
-				url(https://img.NeverStopGaming.net/Panda260/background.jpg) no-repeat center center fixed;
+				url(https://NeverStopGaming.net/download/background.jpg) no-repeat center center fixed;
 	background-size: cover;
 	font-family: "Open Sans", Helvetica;
 	margin: 0;

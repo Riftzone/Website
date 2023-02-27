@@ -1,27 +1,31 @@
-name: Deploy
-
-# Trigger the workflow on push and
-# pull request events on the production branch
+name: Build and Deploy
 on:
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      -   master
 
-# Authenticate to the the server via ssh
-# and run our deployment script
 jobs:
-  deploy:
+  build:
+    name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Deploy to server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USER }}
-          port: ${{ secrets.PORT }}
-          key: ${{ secrets.SSHKEY }}
-          script: "cd /var/www/Riftzone && ./.scripts/deploy.sh"
+      -   name: Checkout Repository
+          uses: actions/checkout@master
+      -   name: Setup Enviroment
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: '7.4'
+      -   name: Speed up the packages installation process
+          run: composer global require hirak/prestissimo
+      -   name: Install Packages
+          run: composer install --no-dev
+      -   name: Deploy to Server
+          uses: ngocquyhoang/deploy@laravel
+          with:
+            user: ${{ secrets.USER }}
+            host: ${{ secrets.HOST }}
+            port: ${{ secrets.PORT }}
+            path: /var/www/Riftzone
+            owner: ${{ secrets.USER }}
+          env:
+            DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

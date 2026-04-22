@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html lang="de">
 
-<style>
-    ::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey;
-        border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background: #ffa60077;
-        border-radius: 10px;
-    }
-</style>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/gif" href="{{ asset('img/riftzone3.0.png') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Riftzone Website</title>
 
     <meta name="author" content="unlxqit">
@@ -33,6 +16,23 @@
     <meta http-equiv="content-language" content="de">
     <meta name="robots" content="index, follow">
 
+    @vite(['resources/css/style.css', 'resources/js/main.js'])
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ffa60077;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,7 +53,6 @@
                         <li><a href="https://dc.riftzone.me" data-after="Team">Team</a></li>
                         <li><a href="#projects" data-after="Social Media">Social Media</a></li>
                         <li><a href="#about" data-after="Über uns">Über uns</a></li>
-                        <!--    <li><a href="#hero" data-after="Kontakt">Kontakt</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -65,7 +64,6 @@
                 <h1><B>Willkommen auf</B><span></span></h1>
                 <h1><span></span></h1>
                 <h1><B>Riftzone.me</B><span></span></h1>
-                <!-- <a href="#about" type="button" class="cta">Über uns</a> -->
             </div>
         </div>
     </section>
@@ -135,19 +133,9 @@
                         </p>
                     </div>
                     <div class="project-img">
-                        <img src=" {{ asset('img/discord_logo2.png') }}" alt="img">
+                        <img src="{{ asset('img/discord_logo2.png') }}" alt="img">
                     </div>
                 </div>
-                <!-- <div class="project-item">
-                <div class="project-info">
-                  <h1></h1>
-                  <h2></h2>
-                  <p></p>
-                </div>
-                <div class="project-img">
-                  <img src="./img/" alt="img">
-                </div>
-              </div> -->
             </div>
         </div>
     </section>
@@ -188,8 +176,6 @@
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
         </div>
     </section>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 </body>
 
 </html>

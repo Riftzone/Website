@@ -1,0 +1,17 @@
+{
+  "resources/css/style.css": {
+    "file": "assets/style-DlWqrK-D.css",
+    "src": "resources/css/style.css",
+    "isEntry": true
+  },
+  "resources/img/riftzone2.jpg": {
+    "file": "assets/riftzone2-oL9_UyER.jpg",
+    "src": "resources/img/riftzone2.jpg"
+  },
+  "resources/js/main.js": {
+    "file": "assets/main-DYGIUoGF.js",
+    "name": "main",
+    "src": "resources/js/main.js",
+    "isEntry": true
+  }
+}

